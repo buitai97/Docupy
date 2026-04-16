@@ -1,10 +1,12 @@
 import { NextRequest } from "next/server";
 
+const BACKEND = process.env.BACKEND_URL ?? "http://localhost:5000";
+
 export async function POST(req: NextRequest) {
     const body = await req.json();
     const token = req.headers.get("authorization");
 
-    const upstream = await fetch("http://localhost:5000/api/chat/all/stream", {
+    const upstream = await fetch(`${BACKEND}/api/chat/all/stream`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

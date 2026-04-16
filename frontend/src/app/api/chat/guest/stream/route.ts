@@ -1,9 +1,11 @@
 import { NextRequest } from "next/server";
 
+const BACKEND = process.env.BACKEND_URL ?? "http://localhost:5000";
+
 export async function POST(req: NextRequest) {
     const body = await req.json();
 
-    const upstream = await fetch("http://localhost:5000/api/chat/guest/stream", {
+    const upstream = await fetch(`${BACKEND}/api/chat/guest/stream`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
