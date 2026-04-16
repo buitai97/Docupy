@@ -4,3 +4,4 @@ frontend/.next/
 # env files
 .claude
 .env
+backend/coverage/
