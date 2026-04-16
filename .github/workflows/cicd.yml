@@ -58,7 +58,7 @@ jobs:
           key: ${{ secrets['EC2_SSH_KEY'] }}
           script: |
             set -e
-            cd ~/AI-doc-platform
+            cd ~/Docupy
 
             git pull origin main
 
